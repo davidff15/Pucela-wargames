@@ -1,13 +1,13 @@
 //
-//  Pucela_WargamesApp.swift
+//  EventManagerApp.swift
 //  Pucela Wargames
 //
-//  Created by David Fernández  on 28/4/25.
+//  Created by David Fernández  on 5/5/25.
 //
-
 import SwiftUI
 
-struct Pucela_WargamesApp: App {
+@main
+struct EventManagerApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
