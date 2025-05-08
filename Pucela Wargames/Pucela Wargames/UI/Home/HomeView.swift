@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
+    @Binding var selectedTab: Tab
 
     var body: some View {
         ZStack {
@@ -29,8 +30,6 @@ struct HomeView: View {
                     }
                     .padding()
                 }
-
-                BottomTabBar()
             }
         }
     }

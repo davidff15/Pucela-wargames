@@ -9,11 +9,13 @@ import Combine
 
 final class HomeViewModel: ObservableObject {
     @Published var events: [Event] = []
+    @Published var user: User
 
     private let getEventsUseCase: GetEventsUseCase
 
-    init(getEventsUseCase: GetEventsUseCase = GetEventsUseCase(repository: MockEventsRepository())) {
+    init(getEventsUseCase: GetEventsUseCase = GetEventsUseCase(repository: MockEventsRepository()), user: User) {
         self.getEventsUseCase = getEventsUseCase
+        self.user = user
         loadEvents()
     }
 
