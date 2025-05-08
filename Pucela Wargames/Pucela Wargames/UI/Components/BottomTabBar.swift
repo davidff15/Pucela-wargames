@@ -6,15 +6,24 @@
 //
 import SwiftUI
 
+enum Tab {
+    case home
+    case calendar
+    case profile
+}
+
 struct BottomTabBar: View {
+    var selectedTab: Tab
+    var onTabSelected: (Tab) -> Void
+
     var body: some View {
         HStack {
             Spacer()
-            Image(systemName: "house.fill")
+            tabIcon(systemName: "house.fill", tab: .home)
             Spacer()
-            Image(systemName: "calendar")
+            tabIcon(systemName: "calendar", tab: .calendar)
             Spacer()
-            Image(systemName: "person.fill")
+            tabIcon(systemName: "person.fill", tab: .profile)
             Spacer()
         }
         .padding()
@@ -22,5 +31,13 @@ struct BottomTabBar: View {
         .cornerRadius(20)
         .shadow(radius: 5)
         .padding(.horizontal)
+    }
+
+    private func tabIcon(systemName: String, tab: Tab) -> some View {
+        Image(systemName: systemName)
+            .foregroundColor(selectedTab == tab ? .purple : .gray)
+            .onTapGesture {
+                onTabSelected(tab)
+            }
     }
 }

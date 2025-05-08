@@ -11,8 +11,7 @@ struct RootView: View {
 
     var body: some View {
         if let user = user {
-            //HomeView(user: user) // <- aún por hacer
-            HomeView()
+            MainTabView(user: user)
         } else {
             let authRepo = AuthRepositoryImpl()
             let loginUseCase = LoginUseCase(repository: authRepo)

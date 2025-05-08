@@ -8,4 +8,5 @@ import Foundation
 
 protocol EventsRepository {
     func fetchEvents() -> [Event]
+    func save(event: Event)
 }
